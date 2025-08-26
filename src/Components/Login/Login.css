@@ -1,0 +1,69 @@
+/* Login.css */
+
+.login-container {
+  width: 350px;
+  margin: 80px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.login-container h2 {
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 24px;
+}
+
+.login-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.login-container input {
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.login-container input:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 5px rgba(74, 144, 226, 0.3);
+}
+
+.login-container button {
+  padding: 12px;
+  background: #4a90e2;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.login-container button:hover {
+  background: #357abd;
+}
+
+.login-container p {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #555;
+}
+
+.login-container a {
+  color: #4a90e2;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.login-container a:hover {
+  text-decoration: underline;
+}
