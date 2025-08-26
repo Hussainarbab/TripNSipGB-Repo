@@ -1,10 +1,12 @@
 import React from "react";
 import "./About.css";
 import { FaMountain, FaMapMarkedAlt, FaAppleAlt } from "react-icons/fa";
+import aboutimg from "../../assets/about.png"
 
 const About = () => {
   return (
     <section id="about" className="about-section">
+      <h1>About Us</h1>
       <div className="about-container">
         {/* Left side text */}
         <div className="about-text">
@@ -31,7 +33,7 @@ const About = () => {
         {/* Right side image */}
         <div className="about-image">
           <img
-            src="https://images.unsplash.com/photo-1501785888041-af3ef285b470"
+            src={aboutimg}
             alt="Gilgit-Baltistan Mountains"
           />
           <div className="icon-box">

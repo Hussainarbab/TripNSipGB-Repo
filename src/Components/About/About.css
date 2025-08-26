@@ -1,6 +1,11 @@
 .about-section {
   padding: 60px 10%;
   background: #f9f9f9;
+  
+}
+.about-section h1{
+  text-align: center;
+  font-size: 4rem;
 }
 
 .about-container {
@@ -8,6 +13,7 @@
   align-items: center;
   gap: 50px;
   flex-wrap: wrap;
+  margin: 100px 0;
 }
 
 .about-text {
@@ -132,7 +138,6 @@
   transform: scale(1.05);
 }
 
-/* Floating icons */
 .icon-box {
   display: flex;
   gap: 20px;
