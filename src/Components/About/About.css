@@ -1,8 +1,10 @@
 .about-section {
   padding: 60px 10%;
-  background: #f9f9f9;
+  background: white;
   
+
 }
+
 .about-section h1{
   text-align: center;
   font-size: 4rem;
@@ -10,6 +12,7 @@
 
 .about-container {
   display: flex;
+  background-color: white;
   align-items: center;
   gap: 50px;
   flex-wrap: wrap;
@@ -38,7 +41,7 @@
 }
 
 .explore-btn {
-  background: #0a8754;
+  /* background: #0a8754; */
   color: white;
   border: none;
   padding: 12px 25px;
@@ -64,7 +67,7 @@
 }
 .about-section {
   padding: 80px 10%;
-  background: linear-gradient(135deg, #f0fdf4, #d9f99d);
+  background: white;
   position: relative;
 }
 
