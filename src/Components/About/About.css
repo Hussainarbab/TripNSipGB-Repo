@@ -1,74 +1,14 @@
 .about-section {
-  padding: 60px 10%;
-  background: white;
-  
-
-}
-
-.about-section h1{
-  text-align: center;
-  font-size: 4rem;
-}
-
-.about-container {
-  display: flex;
-  background-color: white;
-  align-items: center;
-  gap: 50px;
-  flex-wrap: wrap;
-  margin: 100px 0;
-}
-
-.about-text {
-  flex: 1;
-}
-
-.about-text h1 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  color: #333;
-}
-
-.about-text h1 span {
-  color: #0a8754; /* Green accent */
-}
-
-.about-text p {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  margin-bottom: 15px;
-  color: #555;
-}
-
-.explore-btn {
-  /* background: #0a8754; */
-  color: white;
-  border: none;
-  padding: 12px 25px;
-  border-radius: 8px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.explore-btn:hover {
-  background: #086a41;
-}
-
-.about-image {
-  flex: 1;
-  text-align: center;
-}
-
-.about-image img {
-  max-width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
-}
-.about-section {
   padding: 80px 10%;
   background: white;
   position: relative;
+}
+
+.about-section h1 {
+  text-align: center;
+  font-size: 4rem;
+  margin-bottom: 20px;
+  color: #1f2937;
 }
 
 .about-container {
@@ -175,4 +115,75 @@
 @keyframes fadeInRight {
   from { opacity: 0; transform: translateX(50px); }
   to { opacity: 1; transform: translateX(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .about-container {
+    gap: 30px;
+  }
+  .about-text h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .about-container {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .about-text, .about-image {
+    flex: 100%;
+    max-width: 600px;
+    text-align: center;
+  }
+  .about-text h1 {
+    font-size: 2.2rem;
+  }
+  .about-text p {
+    font-size: 1rem;
+  }
+  .icon-box {
+    bottom: -15px;
+  }
+}
+
+@media (max-width: 680px) {
+  .about-section {
+    padding: 60px 5%;
+  }
+  .about-text h1 {
+    font-size: 2rem;
+  }
+  .about-text p {
+    font-size: 0.95rem;
+  }
+  .explore-btn {
+    padding: 12px 25px;
+    font-size: 1rem;
+  }
+  .icon {
+    font-size: 1.7rem;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-section h1 {
+    font-size: 3rem;
+  }
+  .about-text h1 {
+    font-size: 1.8rem;
+  }
+  .about-text p {
+    font-size: 0.9rem;
+  }
+  .explore-btn {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+  }
+  .icon {
+    font-size: 1.5rem;
+    padding: 8px;
+  }
 }
