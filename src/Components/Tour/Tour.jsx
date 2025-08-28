@@ -1,45 +1,60 @@
 import React from "react";
 import "./Tour.css";
 import { FaHiking, FaMapSigns, FaCameraRetro } from "react-icons/fa";
-import tourimg from "../../assets/tour.webp"
+
+// Example images (replace these with your actual images)
+import hunzaImg from "../../assets/hunza.jpg";
+import nagarImg from "../../assets/nagar.jpeg";
+import hoperImg from "../../assets/hoper.webp";
+import hisperImg from "../../assets/hisper.jpg";
+import rakaposhiImg from "../../assets/rakaposhi.jpeg";
+import altitImg from "../../assets/altit.webp";
+
+const places = [
+  { name: "Hunza", image: hunzaImg },
+  { name: "Nagar", image: nagarImg },
+  { name: "Hoper", image: hoperImg },
+  { name: "Hisper", image: hisperImg },
+  { name: "Rakaposhi", image: rakaposhiImg },
+  { name: "Altit", image: altitImg },
+];
 
 const Tours = () => {
+  // Handle button click -> scroll to contact form
+  const handleTravelClick = (placeName) => {
+    if (placeName === "Rakaposhi") {
+      const contactSection = document.getElementById("contact");
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      alert(`Travel plans for ${placeName} coming soon! 🚀`);
+    }
+  };
+
   return (
     <section id="tours" className="tours-section">
-      <h1>Tours Places</h1>
+      <h1>Famous Places in Gilgit-Baltistan</h1>
       <div className="tours-container">
-        {/* Left side image */}
-        <div className="tours-image">
-          <img
-            src={tourimg}
-            alt="Gilgit-Baltistan Tours"
-          />
-          <div className="icon-box">
-            <FaHiking className="icon" />
-            <FaMapSigns className="icon" />
-            <FaCameraRetro className="icon" />
+        {places.map((place, index) => (
+          <div key={index} className="tour-card">
+            <img src={place.image} alt={place.name} />
+            <div className="tour-info">
+              <h2>{place.name}</h2>
+              <div className="icon-box">
+                <FaHiking className="icon" />
+                <FaMapSigns className="icon" />
+                <FaCameraRetro className="icon" />
+              </div>
+              <button
+                className="explore-btn"
+                onClick={() => handleTravelClick(place.name)}
+              >
+                Travel to {place.name}
+              </button>
+            </div>
           </div>
-        </div>
-
-        {/* Right side text */}
-        <div className="tours-text">
-          <h1>
-            Explore <span>Gilgit-Baltistan</span> ✨
-          </h1>
-          <p>
-            Join <b>TripNSipGB</b> for unforgettable journeys through 
-            the <span className="highlight">Karakoram, Himalayas, and Hindukush</span>.  
-            From hidden valleys to historic trails, our guided tours are 
-            designed for adventurers, photographers, and culture lovers alike. 🌍
-          </p>
-          <p>
-            Experience breathtaking views, local traditions, and 
-            the unmatched beauty of Gilgit-Baltistan. Whether it’s 
-            <b> trekking, sightseeing, or exploring hidden gems</b>, 
-            our tours promise memories you’ll cherish forever. 🌿
-          </p>
-          <button className="explore-btn">Book a Tour</button>
-        </div>
+        ))}
       </div>
     </section>
   );
