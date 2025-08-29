@@ -1,69 +1,95 @@
 /* Login.css */
 
-.login-container {
-  width: 350px;
-  margin: 80px auto;
-  padding: 30px;
-  background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-  text-align: center;
-  font-family: "Poppins", sans-serif;
-}
-
-.login-container h2 {
-  margin-bottom: 20px;
-  color: #333;
-  font-size: 24px;
-}
-
-.login-container form {
+/* Center the form in the middle of the screen */
+.auth-container {
   display: flex;
-  flex-direction: column;
-  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #2c3e50, #3498db);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.login-container input {
-  padding: 12px;
-  font-size: 16px;
+/* Card-style form */
+.auth-form {
+  background: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 380px;
+  text-align: center;
+}
+
+/* Heading */
+.auth-form h2 {
+  margin-bottom: 20px;
+  color: #2c3e50;
+  font-size: 28px;
+}
+
+/* Inputs */
+.auth-form input {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 10px 0;
   border: 1px solid #ccc;
   border-radius: 8px;
-  outline: none;
-  transition: border-color 0.3s ease;
-}
-
-.login-container input:focus {
-  border-color: #4a90e2;
-  box-shadow: 0 0 5px rgba(74, 144, 226, 0.3);
-}
-
-.login-container button {
-  padding: 12px;
-  background: #4a90e2;
-  color: white;
   font-size: 16px;
+  transition: 0.3s ease;
+}
+
+.auth-form input:focus {
+  border-color: #3498db;
+  outline: none;
+  box-shadow: 0 0 6px rgba(52, 152, 219, 0.5);
+}
+
+/* Button */
+.auth-form button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  background: #3498db;
+  color: #fff;
   border: none;
   border-radius: 8px;
+  font-size: 16px;
   cursor: pointer;
   transition: background 0.3s ease;
 }
 
-.login-container button:hover {
-  background: #357abd;
+.auth-form button:hover {
+  background: #2c80b4;
 }
 
-.login-container p {
-  margin-top: 15px;
+/* Signup link text */
+.auth-form p {
+  margin-top: 20px;
   font-size: 14px;
-  color: #555;
+  color: #333;
 }
 
-.login-container a {
-  color: #4a90e2;
-  text-decoration: none;
-  font-weight: 500;
+.auth-form .link {
+  color: #3498db;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease;
 }
 
-.login-container a:hover {
+.auth-form .link:hover {
+  color: #1d6fa5;
   text-decoration: underline;
+}
+
+/* Responsive for small screens */
+@media (max-width: 500px) {
+  .auth-form {
+    padding: 25px;
+    width: 90%;
+  }
+  
+  .auth-form h2 {
+    font-size: 22px;
+  }
 }

@@ -1,72 +1,88 @@
-/* Signup.css */
 
-.signup-container {
-  width: 100%;
-  max-width: 400px;
-  margin: 80px auto;
-  padding: 30px;
-  background: #ffffff;
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  font-family: Arial, sans-serif;
+}
+
+.auth-box {
+  background: #fff;
+  padding: 2rem;
   border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+  width: 350px;
   text-align: center;
+  animation: fadeIn 0.5s ease-in-out;
 }
 
-.signup-container h2 {
-  margin-bottom: 20px;
-  font-size: 28px;
+.auth-box h2 {
+  margin-bottom: 1.5rem;
   color: #333;
+  font-size: 1.8rem;
+  font-weight: bold;
 }
 
-.signup-container form {
+/* Form Styling */
+.auth-form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
 }
 
-.signup-container input {
+.auth-form input {
   padding: 12px;
-  font-size: 16px;
+  margin-bottom: 1rem;
   border: 1px solid #ccc;
   border-radius: 8px;
   outline: none;
+  font-size: 1rem;
   transition: 0.3s;
 }
 
-.signup-container input:focus {
-  border-color: #4cafef;
-  box-shadow: 0 0 8px rgba(76, 175, 239, 0.5);
+.auth-form input:focus {
+  border-color: #4facfe;
+  box-shadow: 0px 0px 6px rgba(79, 172, 254, 0.5);
 }
 
-.signup-container button {
+/* Button Styling */
+.auth-btn {
   padding: 12px;
-  font-size: 16px;
-  background: linear-gradient(45deg, #4cafef, #0077ff);
+  background: #4facfe;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
   border: none;
   border-radius: 8px;
-  color: white;
-  font-weight: bold;
   cursor: pointer;
   transition: 0.3s;
 }
 
-.signup-container button:hover {
-  background: linear-gradient(45deg, #0077ff, #4cafef);
-  transform: scale(1.05);
+.auth-btn:hover {
+  background: #00c6ff;
+  transform: translateY(-2px);
 }
 
-.signup-container p {
-  margin-top: 15px;
-  font-size: 14px;
+/* Links */
+.auth-links {
+  margin-top: 1rem;
+  font-size: 0.9rem;
   color: #555;
 }
 
-.signup-container a {
-  color: #0077ff;
+.auth-links a {
+  color: #4facfe;
   text-decoration: none;
   font-weight: bold;
-  transition: 0.2s;
 }
 
-.signup-container a:hover {
+.auth-links a:hover {
   text-decoration: underline;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
 }

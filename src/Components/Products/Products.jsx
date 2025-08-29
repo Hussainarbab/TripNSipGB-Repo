@@ -4,7 +4,7 @@ import "./Products.css";
 // Images
 import almond from "../../assets/almonds.jpg";
 import walnut from "../../assets/walnut.jpg";
-import apricot from "../../assets/appricot.jpg"; // ✅ fixed typo
+import apricot from "../../assets/appricot.jpg";
 import pineNut from "../../assets/pinenuts.jpg";
 import apple from "../../assets/apple.jpg";
 import mulberry from "../../assets/Mulberries.jpg";

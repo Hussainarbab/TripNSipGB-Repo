@@ -1,32 +1,46 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import "./Signup.css";
 
-const Signup = () => {
+function Signup({ setUser, setShowSignup }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const navigate = useNavigate();
 
   const handleSignup = (e) => {
     e.preventDefault();
 
+    // Check if fields are filled
+    if (!email || !password || !confirmPassword) {
+      alert("Fill all fields");
+      return;
+    }
+
+    // Check if password matches
     if (password !== confirmPassword) {
-      alert("Passwords do not match ❌");
+      alert("Passwords do not match!");
+      return;
+    }
+
+    // Save user data in localStorage
+    const existingUsers = JSON.parse(localStorage.getItem("users")) || [];
+    const userExists = existingUsers.find((u) => u.email === email);
+
+    if (userExists) {
+      alert("User already exists! Please login.");
       return;
     }
 
     const newUser = { email, password };
-    localStorage.setItem("user", JSON.stringify(newUser));
+    localStorage.setItem("users", JSON.stringify([...existingUsers, newUser]));
 
-    alert("Signup Successful 🎉");
-    navigate("/login"); // 👈 redirect to login after signup
+    alert("Signup successful! Please login.");
+    setShowSignup(false); // Redirect to login page
   };
 
   return (
-    <div className="signup-container">
-      <h2>Sign Up</h2>
-      <form onSubmit={handleSignup}>
+    <div className="auth-container">
+      <form className="auth-form" onSubmit={handleSignup}>
+        <h2>Signup</h2>
         <input
           type="email"
           placeholder="Enter Email"
@@ -48,13 +62,16 @@ const Signup = () => {
           onChange={(e) => setConfirmPassword(e.target.value)}
           required
         />
-        <button type="submit">Sign Up</button>
+        <button type="submit">Signup</button>
+        <p>
+          Already have an account?{" "}
+          <span onClick={() => setShowSignup(false)} className="link">
+            Login
+          </span>
+        </p>
       </form>
-      <p>
-        Already have an account? <a href="/login">Login</a>
-      </p>
     </div>
   );
-};
+}
 
 export default Signup;

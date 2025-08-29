@@ -1,33 +1,29 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import "./Login.css";
 
-const Login = () => {
+function Login({ setUser, setShowSignup }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
 
-    const storedUser = JSON.parse(localStorage.getItem("user"));
+    const existingUsers = JSON.parse(localStorage.getItem("users")) || [];
+    const user = existingUsers.find(
+      (u) => u.email === email && u.password === password
+    );
 
-    if (
-      storedUser &&
-      storedUser.email === email &&
-      storedUser.password === password
-    ) {
-      alert("Login Successful ✅");
-      navigate("/home"); // 👈 go to Home page
+    if (user) {
+      setUser({ email });
     } else {
-      alert("Invalid credentials ❌");
+      alert("Invalid email or password!");
     }
   };
 
   return (
-    <div className="login-container">
-      <h2>Login</h2>
-      <form onSubmit={handleLogin}>
+    <div className="auth-container">
+      <form className="auth-form" onSubmit={handleLogin}>
+        <h2>Login</h2>
         <input
           type="email"
           placeholder="Enter Email"
@@ -43,12 +39,15 @@ const Login = () => {
           required
         />
         <button type="submit">Login</button>
+        <p>
+          Don’t have an account?{" "}
+          <span onClick={() => setShowSignup(true)} className="link">
+            Signup
+          </span>
+        </p>
       </form>
-      <p>
-        Don't have an account? <a href="/signup">Sign Up</a>
-      </p>
     </div>
   );
-};
+}
 
 export default Login;
