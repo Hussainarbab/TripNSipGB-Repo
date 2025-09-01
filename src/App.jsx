@@ -10,18 +10,12 @@ import Login from "./Components/Login/Login";
 import Signup from "./Components/Signup/Signup";
 
 function App() {
-  const [user, setUser] = useState(null); // null = not logged in
+  const [user, setUser] = useState(null); 
   const [showSignup, setShowSignup] = useState(false);
 
   return (
     <div>
-      {!user ? (
-        showSignup ? (
-          <Signup setUser={setUser} setShowSignup={setShowSignup} />
-        ) : (
-          <Login setUser={setUser} setShowSignup={setShowSignup} />
-        )
-      ) : (
+      
         <>
           <Navbar />
           <Home />
