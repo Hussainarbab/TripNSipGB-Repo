@@ -15,7 +15,13 @@ function App() {
 
   return (
     <div>
-      
+      {!user ? (
+        showSignup ? (
+          <Signup setUser={setUser} setShowSignup={setShowSignup} />
+        ) : (
+          <Login setUser={setUser} setShowSignup={setShowSignup} />
+        )
+      ) : (
         <>
           <Navbar />
           <Home />
