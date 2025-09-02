@@ -8,12 +8,10 @@ import Tour from "./Components/Tour/Tour";
 import Footer from "./Components/Footer/Footer";
 import Login from "./Components/Login/Login";
 import Signup from "./Components/Signup/Signup";
-import Dashboard from "./Components/Dashboard/Dashboard";  // 👈 added
 
 function App() {
   const [user, setUser] = useState(null); 
   const [showSignup, setShowSignup] = useState(false);
-  const [showDashboard, setShowDashboard] = useState(false); // 👈 added
 
   return (
     <div>
@@ -23,8 +21,6 @@ function App() {
         ) : (
           <Login setUser={setUser} setShowSignup={setShowSignup} />
         )
-      ) : showDashboard ? (   
-        <Dashboard setShowDashboard={setShowDashboard} />
       ) : (
         <>
           <Navbar />
@@ -33,6 +29,7 @@ function App() {
           <Tour />
           <Products />
           <Contact />
+          
           <Footer />
         </>
       )}
