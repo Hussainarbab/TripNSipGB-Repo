@@ -1,54 +1,26 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
 import "./Dashboard.css";
 
-const Dashboard = ({ setIsLoggedIn }) => {
-  const [messages, setMessages] = useState([]);
-  const [input, setInput] = useState("");
-
-  const handleSend = () => {
-    if (input.trim()) {
-      setMessages([...messages, { text: input, sender: "user" }]);
-      setInput("");
-    }
-  };
-
-  const handleLogout = () => {
-    localStorage.setItem("isLoggedIn", "false");
-    setIsLoggedIn(false);
-  };
-
+const Dashboard = () => {
   return (
     <div className="dashboard">
-      <h1>Welcome to Your Dashboard 🚀</h1>
-      <button onClick={handleLogout} className="logout-btn">Logout</button>
-
-      <div className="links">
-        <h2>Explore Your Pages</h2>
-        <Link to="/">🏠 Home</Link>
-        <Link to="/about">ℹ️ About</Link>
-        <Link to="/tours">🗺️ Tours</Link>
-        <Link to="/products">🛒 Products</Link>
-        <Link to="/contact">📞 Contact</Link>
-      </div>
-
-      <div className="chatbox">
-        <h2>Chat with Me 💬</h2>
-        <div className="messages">
-          {messages.map((msg, idx) => (
-            <p key={idx} className={msg.sender === "user" ? "user-msg" : "bot-msg"}>
-              {msg.text}
-            </p>
-          ))}
+      <h1 className="dashboard-title">Website Statistics</h1>
+      <div className="stats-grid">
+        <div className="stat-card">
+          <h2>1200</h2>
+          <p>Total Visitors</p>
         </div>
-        <div className="chat-input">
-          <input
-            type="text"
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            placeholder="Type your message..."
-          />
-          <button onClick={handleSend}>Send</button>
+        <div className="stat-card">
+          <h2>350</h2>
+          <p>Bookings</p>
+        </div>
+        <div className="stat-card">
+          <h2>$15,000</h2>
+          <p>Revenue</p>
+        </div>
+        <div className="stat-card">
+          <h2>85%</h2>
+          <p>Customer Satisfaction</p>
         </div>
       </div>
     </div>
