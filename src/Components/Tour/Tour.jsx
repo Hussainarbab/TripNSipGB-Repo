@@ -2,7 +2,6 @@ import React from "react";
 import "./Tour.css";
 import { FaHiking, FaMapSigns, FaCameraRetro } from "react-icons/fa";
 
-// Example images (replace these with your actual images)
 import hunzaImg from "../../assets/hunza.jpg";
 import nagarImg from "../../assets/nagar.jpeg";
 import hoperImg from "../../assets/hoper.webp";
@@ -27,7 +26,7 @@ const Tours = () => {
         contactSection.scrollIntoView({ behavior: "smooth" });
       }
     } else {
-      alert(`Travel plans for ${placeName} contact us ! 🚀`);
+      alert(`Travel plans for ${placeName} contact us ! `);
     }
   };
 
